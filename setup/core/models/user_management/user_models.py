@@ -12,6 +12,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     is_active = models.BooleanField('active', default=True)
     is_staff = models.BooleanField('active', default=False)
     address = models.TextField(default="")
+    verification = models.BooleanField(default=False)
     # avatar = models.ImageField(upload_to='avatars/', null=True, blank=True)
    
     objects = UserManager()
