@@ -1,18 +1,58 @@
-#### Install the core user module using the following command
+#### Install the core module in you environment using the following command
 ```
-pip install --force-reinstall 'git+https://github.com/BoTreeConsultingTeam/erp-core-modules.git@master#egg=core_user_module&subdirectory=core_user_module'
+pip install --force-reinstall 'git+https://github.com/lalitvasoya/django_core_module.git@develop#egg=core&subdirectory=setup'
 ```
 
-##### format of the source:
+##### Formate the installable link
+- `REPO_URL=https://github.com/lalitvasoya/django_core_module.git`
+- `BRANCH=develop`
+- `EGG=core`
+- `SUBDIRECTORY=setup`
 
-`REPO_URL=https://github.com/BoTreeConsultingTeam/erp-core-modules.git`
+> pip install --force-reinstall 'git+`{$REPO_URL}`@`{$BRANCH}`#egg=`{$EGG}`&`{$SUBDIRECTORY}'
 
-`BRANCH=master`
 
-`EGG=core_user_module`
+When a module has been successfully installed, you must use it in your project by according to the steps below.
 
-`SUBDIRECTORY=core_user_module`
+- Add `'core'` to your `INSTALLED_APPS` setting.
+    ```
+    INSTALLED_APPS = [
+        ...
+        'core',
+    ]
+    ```
 
-```
-pip install --force-reinstall 'git+{$REPO_URL}@{$BRANCH}#egg={$EGG}&{$SUBDIRECTORY}
+- Migrate your database :boom:
+  ```python manage.py migrate```
+
+- enjoy codding :smiley:
+
+
+#### The file strucure of the core module 
+```sh
+.
+├── core -> setup/core # symbolic link of setup/core app
+├── db.sqlite3
+├── installable_app
+│   ├── asgi.py
+│   ├── __init__.py
+│   ├── settings.py
+│   ├── urls.py
+│   └── wsgi.py
+├── manage.py
+└── setup # installable applications
+    ├── core
+    │   ├── admin # python module register models 
+    │   ├── apps.py
+    │   ├── __init__.py
+    │   ├── managers # python module contain the managers of models
+    │   ├── migrations # python module contian the model migrations
+    │   ├── models # python module contain the django models
+    │   ├── serializers # python module 
+    │   ├── tests.py
+    │   └── views.py
+    ├── __init__.py
+    ├── README.rst
+    ├── requirements.txt
+    └── setup.py
 ```
