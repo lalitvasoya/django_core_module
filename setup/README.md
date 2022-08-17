@@ -29,7 +29,7 @@ When a module has been successfully installed, you must use it in your project b
   python manage.py migrate
   ```
 
-- enjoy codding :smiley:
+- enjoy coding :smiley:
 
 
 #### The file strucure of the core module 
