@@ -2,7 +2,7 @@ import setuptools
 
 REQUIREMENTS = [i.strip() for i in open("requirements.txt").readlines()]
 
-with open("README.rst", "r") as readme_file:
+with open("README.md", "r") as readme_file:
     long_description = readme_file.read()
 
 setuptools.setup(
