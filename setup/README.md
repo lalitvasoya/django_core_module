@@ -9,7 +9,9 @@ pip install --force-reinstall 'git+https://github.com/lalitvasoya/django_core_mo
 - `EGG=core`
 - `SUBDIRECTORY=setup`
 
-> pip install --force-reinstall 'git+`{$REPO_URL}`@`{$BRANCH}`#egg=`{$EGG}`&`{$SUBDIRECTORY}'
+```
+pip install --force-reinstall 'git+{$REPO_URL}@{$BRANCH}#egg={$EGG}&{$SUBDIRECTORY}'
+```
 
 
 When a module has been successfully installed, you must use it in your project by according to the steps below.
@@ -23,7 +25,9 @@ When a module has been successfully installed, you must use it in your project b
     ```
 
 - Migrate your database :boom:
-  ```python manage.py migrate```
+  ```
+  python manage.py migrate
+  ```
 
 - enjoy codding :smiley:
 
