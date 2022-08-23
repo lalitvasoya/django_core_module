@@ -25,5 +25,5 @@ setuptools.setup(
     package_dir={"": "."},
     packages=setuptools.find_packages(where="."),
     install_requires=REQUIREMENTS,
-    python_requires=">=3.9",
+    python_requires=">=3.8.10",
 )
